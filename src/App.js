@@ -22,6 +22,9 @@ export const App = withStyles(styles)((props) => {
     io.on("report", function (report) {
       setFrames((frames) => [...frames, JSON.parse(report)]);
     });
+    io.on("generic", function (report) {
+      setFrames((frames) => [...frames, JSON.parse(report)]);
+    });
     io.on("response", function (report) {
       setFrames((frames) => [...frames, JSON.parse(report)]);
     });
